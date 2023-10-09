@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&display=swap" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <title>Quế Trân</title>
+  </head>
+
+  <body>
+<div class="background">
+  <button class="start" onclick="dsa()">Bắt đầu</button>
+</div>
+
+    <audio id="Audio">
+      <source src="./cctm.mp3" type="audio/mp3" />
+    </audio>
+
+    <div class="container2">
+      <div class="content">
+        <canvas id="universe"></canvas>
+      </div>
+    </div>
+
+
+    <div class="title">
+
+      <h3 class="STARDUST1">10/2023</h3>
+      <h1 class="STARDUST2">Quế Trân</h1>
+      <h3 class="STARDUST3"><strong>❤</strong>sory em nhe <strong>❤</strong> </h3>
+      <div class="img-con">
+        <img id="nonee" src="img/5.png"/>  
+        <img class="yslider img" src="img/1.png"/>  
+        <img class="yslider img" src="img/2.png"/>
+        <img class="yslider img" src="img/3.png"/>
+        <img class="yslider img" src="img/4.png"/>
+        <img class="yslider img" src="img/6.png"/>
+        <img class="yslider img" src="img/7.png"/>
+        <img class="yslider img" src="img/8.png"/>
+    </div>
+      <canvas id="pinkboard"></canvas>
+    </div>
+    <script src="https://kit.fontawesome.com/4f3ce16e3e.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/particle.js"></script>
+    <script src="js/universe.js"></script>
+  </body>
+  <script>
+
+    function dsa(){
+
+      
+
+      //document.getElementsByClassName("backgroud").style.display = "none";
+      document.getElementsByClassName("background")[0].style.display = "none";
+      document.getElementById("nonee").style.display = "none";
+
+
+      
+   
+
+      const body = document.querySelector("body");
+
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.className = "fas fa-heart";
+            heart.style.left = (Math.random() * 100)+"vw";
+            heart.style.animationDuration = (Math.random()*3)+2+"s"
+            body.appendChild(heart);
+        }
+          setInterval(createHeart,100);
+          setInterval(function name(params) {
+              var heartArr = document.querySelectorAll(".fa-heart")
+              if (heartArr.length > 200) {
+                heartArr[0].remove()
+              }
+              //console.log(heartArr);
+          },100)
+
+
+        
+
+    }
+  </script>
+</html>
+
+<script>
+   
+  var slideIndex = 0;
+  carousel()
+  function carousel() {
+  var i;
+  var x = document.getElementsByClassName("yslider");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > x.length) {slideIndex = 1}
+  x[slideIndex-1].style.display = "block";
+  setTimeout(carousel, 2000); // Change image every 2 seconds
+  }
+</script>
